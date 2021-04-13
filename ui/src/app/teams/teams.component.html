@@ -1,0 +1,43 @@
+<div id="container">
+
+  <!--ordered of points button-->
+  <input type="radio" id="orderedPoints" value="Order" name="ordered" (click)="sort('noOfPoints')">
+  <label for="orderedPoints" class="orderedBtn">Order Of Points <span></span></label>
+
+  <!--ordered of goals button-->
+  <input type="radio" id="orderedGoals" value="Order" name="ordered" (click)="sort('noOfScoredGoals')">
+  <label for="orderedGoals" class="orderedBtn">Order Of Goals <span></span></label>
+
+  <!--ordered fo wins button-->
+  <input type="radio" id="orderedWins" value="Order" name="ordered" (click)="sort('noOfWins')">
+  <label for="orderedWins" class="orderedBtn">Order Of Wins <span></span></label>
+
+  <!--teams details table-->
+  <div class="teamsTableContainer">
+    <table id="users">
+      <thead>
+      <tr>
+        <th>Club Name</th>
+        <th>Played Matches</th>
+        <th>Wins</th>
+        <th>Draws</th>
+        <th>Defeats</th>
+        <th>Goals</th>
+        <th>Points</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let club of listOfClubs | orderBy: key: false">
+        <td>{{club.clubName}}</td>
+        <td>{{club.noOfPlayedMatches}}</td>
+        <td>{{club.noOfWins}}</td>
+        <td>{{club.noOfDraws}}</td>
+        <td>{{club.noOfDefeats}}</td>
+        <td>{{club.noOfScoredGoals}}</td>
+        <td>{{club.noOfPoints}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

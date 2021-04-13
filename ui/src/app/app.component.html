@@ -1,0 +1,19 @@
+<!--create a navigation bar-->
+<header>
+  <h5 id="heading">
+    <img src="../assets/lion-logo.png" alt="logo" id="navlogo">
+    Premier League
+  </h5>
+
+  <!-- teams button -->
+  <input type="radio" id="teams" name="tables" value="table" routerLink="teams" checked>
+  <label for="teams" class="navBtn">Teams</label>
+
+  <!-- matches button -->
+  <input type="radio" id="match" name="tables" value="table" routerLink="matches">
+  <label for="match" class="navBtn">Matches</label>
+
+</header>
+
+<!-- to router components -->
+<router-outlet></router-outlet>

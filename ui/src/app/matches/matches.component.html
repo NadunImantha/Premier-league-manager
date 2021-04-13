@@ -1,0 +1,34 @@
+<div id="container">
+  <!--  add random match button -->
+  <button mat-raised-button (click)="addMatch()" id="addMatchBtn">
+    Random Played Match
+    <span></span>
+  </button>
+
+  <!--  search match -->
+  <span id="searchDiv">
+    Search :
+    <input id="searchBar" type="text" placeholder=" DD/MM/YYYY " name="PlayedDate" [(ngModel)]="PlayedDate" (ngModelChange)="search()">
+  </span>
+
+  <!--played match table-->
+  <div class="tableContainer">
+    <table id="matchTable">
+      <tr>
+        <th>Date</th>
+        <th>Home Team</th>
+        <th>Away Team</th>
+        <th>Home Team Goals</th>
+        <th>Away Team Goals</th>
+      </tr>
+
+      <tr *ngFor="let match of listOfMatches">
+        <td>{{match.playedDate}}</td>
+        <td>{{match.ATeam}}</td>
+        <td>{{match.BTeam}}</td>
+        <td>{{match.ATeamScore}}</td>
+        <td>{{match.BTeamScore}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
